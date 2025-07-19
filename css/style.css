@@ -1,3 +1,4 @@
+/* Reset & Base Styles */
 * {
   box-sizing: border-box;
 }
@@ -29,34 +30,18 @@ header {
   z-index: 1000;
 }
 
-
-nav ul li ul.dropdown-content {
-  
-  display: none;
-  position: absolute;
-  z-index: 1001; /* Ensure it's above overlay and video */
-  background-color: white;
-  min-width: 180px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  border-radius: 6px;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-
-
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo-title {
   display: flex;
   align-items: center;
   gap: 0.7rem;
 }
+
 .site-logo {
   width: 48px;
   height: 32px;
@@ -65,26 +50,58 @@ header .container {
   background: #fff;
   box-shadow: 0 1px 6px rgba(0,0,0,0.07);
 }
+
 nav ul {
   list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
+
+nav ul li {
+  position: relative;
+}
+
 nav ul li a {
   text-decoration: none;
   padding: 10px 15px;
-  color: #ffffff; /* Default color for navbar links */
+  display: block;
+  color: #ffffff;
   transition: background 0.3s, color 0.3s;
 }
 
-nav ul li a:hover {
-  background-color: #ffffff; /* or use a soft highlight color like #f0f0f0 */
-  color: #0077b6; /* Darker highlight text */
+nav ul li a:hover,
+nav ul li:hover > a {
+  background-color: #ffffff;
+  color: #0077b6;
   border-radius: 4px;
 }
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  z-index: 1001;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li a {
+  padding: 10px 15px;
+  color: #333;
+  transition: background 0.3s;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f0f0f0;
+}
 
 /* Hero Section */
 .hero {
@@ -97,33 +114,38 @@ nav ul li a:hover {
   justify-content: center;
   text-align: center;
 }
-.video-bg {
+
+.video-bg, .overlay {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  overflow: hidden;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
+
 .video-bg video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .overlay {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  z-index: 2;
   background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
 }
+
 .hero-content {
   position: relative;
   z-index: 3;
   max-width: 800px;
   padding: 20px;
 }
+
 .hero-content h2 {
   font-size: 3rem;
   margin-bottom: 10px;
 }
+
 .hero-content p {
   font-size: 1.5rem;
 }
@@ -132,6 +154,8 @@ nav ul li a:hover {
 section {
   padding: 2.5rem 0;
 }
+
+/* Conclusion Glass Box */
 #conclusion {
   display: flex;
   justify-content: center;
@@ -157,7 +181,6 @@ section {
 .glass-image {
   flex: 1;
   min-width: 300px;
-  /* height: 300px; */
 }
 
 .glass-image img {
@@ -182,67 +205,15 @@ section {
   font-size: 16px;
   line-height: 1.6;
 }
+
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
-/* Dropdown Styles */
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
 
-nav ul li {
-  position: relative;
-}
-
-nav ul li a {
-  text-decoration: none;
-  padding: 10px 15px;
-  display: block;
-  color: #333;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 180px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 6px;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-
-
-.dropdown-content li a {
-  padding: 10px 15px;
-  color: #333;
-  transition: background 0.3s;
-}
-
-.dropdown-content li a:hover {
-  background-color: #f0f0f0;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-nav ul li:hover > a {
-  color: #147dad;
-}
-
-/* Services Summary Section */
+/* Services Summary */
 #services-summary {
   padding: 60px 20px;
   background: #f4f9fc;
@@ -262,7 +233,7 @@ nav ul li:hover > a {
   overflow: hidden;
 }
 
-.service-summary-text {
+.service-summary-text, .glass-text {
   flex: 1;
   padding: 40px;
   color: #003366;
@@ -271,17 +242,17 @@ nav ul li:hover > a {
   justify-content: center;
 }
 
-.service-summary-text h3 {
+.service-summary-text h3, .glass-text h3 {
   font-size: 26px;
   margin-bottom: 16px;
 }
 
-.service-summary-text p {
+.service-summary-text p, .glass-text p {
   font-size: 16px;
   line-height: 1.7;
 }
 
-.service-summary-image {
+.service-summary-image, .glass-image {
   flex: 1;
   min-width: 300px;
 }
@@ -292,8 +263,7 @@ nav ul li:hover > a {
   object-fit: cover;
 }
 
-
-/* Projects Section */
+/* Projects */
 .projects-list {
   display: flex;
   flex-wrap: nowrap;
@@ -302,6 +272,7 @@ nav ul li:hover > a {
   padding-bottom: 1rem;
   scrollbar-width: thin;
 }
+
 .project {
   flex: 0 0 auto;
   width: 260px;
@@ -318,6 +289,7 @@ nav ul li:hover > a {
   text-decoration: none;
   color: inherit;
 }
+
 .project img {
   width: 100%;
   height: 160px;
@@ -325,35 +297,23 @@ nav ul li:hover > a {
   border-radius: 8px;
   margin-bottom: 0.7rem;
 }
+
 .projects-list::-webkit-scrollbar {
   height: 8px;
 }
+
 .projects-list::-webkit-scrollbar-thumb {
   background: #b3c6e0;
   border-radius: 4px;
 }
 
-/* Card Hover Effects */
-.service-card, .project {
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-decoration: none;
-  color: inherit;
-}
-.service-card:hover, .project:hover {
+.project:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 6px 24px rgba(20, 125, 173, 0.18);
   z-index: 2;
-  text-decoration: none;
-}
-.services-list a, .projects-list a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  height: 100%;
 }
 
-/* Testimonials Section */
+/* Clients / Testimonials */
 #clients {
   background: #f9f9f9;
   padding: 40px 20px;
@@ -406,24 +366,27 @@ nav ul li:hover > a {
   color: #555;
 }
 
-
 /* Footer */
 footer {
   background: #147dad;
   padding: 2rem 0;
 }
+
 .footer-contact .info {
   margin-bottom: 0.3rem;
   color: white;
   font-size: 1rem;
   padding: 0.2rem 0;
 }
+
 .footer-contact strong {
   color: white;
 }
+
 .socials {
   margin-top: 0.5rem;
 }
+
 .socials a {
   color: #aad4ff;
   margin: 0 0.7rem;
@@ -431,7 +394,7 @@ footer {
   font-size: 1.1rem;
   transition: color 0.2s;
 }
+
 .socials a:hover {
   color: #fff;
 }
-
