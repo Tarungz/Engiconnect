@@ -28,57 +28,36 @@
           <li><a href="../extra pages/projects.html">Projects</a></li>
           <li><a href="../extra pages/clients.html">Clients</a></li>
           <li><a href="../extra pages/contact.html">Contact</a></li>
-          <li><a href="../extra pages/signup.html">Signup</a></li>
+<li class="dropdown">
+            <a href="#">Account </a>
+            <ul class="dropdown-content">
+              <li><a href="../extra pages/signin.html">Sign In</a></li>
+              <li><a href="../extra pages/signup.html">Sign Up</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
-    <!-- Signup form -->
-     
-  <div class="signup-container">
-    <div class="signup-box">
-    <h1>EngiConnect Sign Up</h1>
+    
+  <!-- Background Video -->
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="../resources/images/4457865-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-    <form id="signupForm">
-      <div class="role-selection">
-        <label class="role-option">
-          <input type="radio" name="role" value="provider" required />
-          Provider
-        </label>
-        <label class="role-option">
-          <input type="radio" name="role" value="consumer" />
-          Consumer
-        </label>
-      </div>
+  <!-- Dark Overlay -->
+  <div class="overlay"></div>
 
-      <label for="fullName">Full Name</label>
-      <input type="text" id="fullName" name="fullName" required placeholder="Your full name" />
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required placeholder="example@domain.com" />
-
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required placeholder="Create a password" minlength="6" />
-
-      <label for="confirmPassword">Confirm Password</label>
-      <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm password" minlength="6" />
-
-      <button type="submit">Sign Up</button>
-    </form>
-
-    <p class="signin-text">
-      Already have an account? <a href="../extra pages/signin.html">Sign in</a>
-    </p>
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Choose Your Role</h1>
+    <p>Start your journey with EngiConnect</p>
+    <button class="btn provider-btn" onclick="window.location.href='provider-signup.html'">I'm a Provider</button>
+    <button class="btn consumer-btn" onclick="window.location.href='consumer-signup.html'">I'm a Consumer</button>
   </div>
-  </div>
-   <!-- Success Popup -->
-  <div id="successPopup" class="popup hidden">
-    <div class="popup-content">
-      <span class="tick">&#10004;</span>
-      <p id="successMessage"></p>
-    </div>
-  </div>
-   <!-- Footer -->
+
+  <!-- Footer -->
   <footer>
     <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
       <div class="footer-contact" style="text-align: left;">

@@ -5,6 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EngiConnect - Engineering Consultant</title>
   <link rel="stylesheet" href="./css/style.css" />
+  <style>
+       .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1001;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.85);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 0 0 0 8px;
+        z-index: 1000;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+     .logo-title {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .logo-title img.site-logo {
+        margin-right: 10px;
+      }
+    
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .logo-title img.site-logo {
+      max-height: 50px;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -14,8 +71,10 @@
         <img src="./resources/images/logo.png" alt="EngiConnect Logo" class="site-logo" />
         <h1>EngiConnect</h1>
       </div>
+       <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+    
       <nav>
-        <ul>
+        <ul id="navList">
           <li><a href="./index.html">Home</a></li>
           <li class="dropdown">
           <a href="./extra pages/about.html">About ▾</a>
@@ -29,8 +88,13 @@
           <li><a href="./extra pages/projects.html">Projects</a></li>
           <li><a href="./extra pages/clients.html">Clients</a></li>
           <li><a href="./extra pages/contact.html">Contact</a></li>
-          <li><a href="./extra pages/signup.html">Signup</a></li>
-        </ul>
+ <li class="dropdown">
+            <a href="#">Account </a>
+            <ul class="dropdown-content">
+              <li><a href="./extra pages/signin.html">Sign In</a></li>
+              <li><a href="./extra pages/signup.html">Sign Up</a></li>
+            </ul>
+          </li>
       </nav>
     </div>
   </header>
@@ -178,6 +242,12 @@
       </div>
     </div>
   </footer>
+  <script>
+    function toggleMenu() {
+      const navList = document.getElementById("navList");
+      navList.classList.toggle("active");
+}
+  </script>
   <script src="./js/script.js"></script>
 </body>
 </html>

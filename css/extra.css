@@ -63,7 +63,7 @@ header .container {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
   align-items: center;
@@ -78,7 +78,7 @@ nav a {
   text-decoration: none;
   font-weight: 500;
   transition: 0.2s;
-  padding: 10px 15px;
+  padding: 10px 10px;
   display: block;
 }
 
@@ -219,6 +219,44 @@ nav a:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+.consult-prof {
+  background-color: #f0f4f8;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.consult-prof .container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.consult-prof h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.consult-prof p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.consult-prof button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.consult-prof button:hover {
+  background-color: #0056b3;
+}
+
 
 /* =====================
    Projects Section
@@ -269,168 +307,88 @@ nav a:hover {
   justify-content: center;
   border-radius: 0 0 12px 12px;
 }
+    /* Video as background */
 
-/* Signup Container - centers the box */
-.signup-container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f5f7fa;
-  padding: 20px;
-}
+    
+/* role container */
+  
 
-/* Signup Box styling */
-.signup-box {
-  background: #fff;
-  padding: 40px 35px;
-  border-radius: 14px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-  max-width: 400px;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-}
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
 
-.signup-box h1 {
-  font-size: 28px;
-  color: #222;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
 
-/* Role selection styling */
-.role-selection {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 25px;
-}
+    .content {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      z-index: 1;
+    }
 
-.role-option {
-  font-size: 16px;
-  color: #444;
-  cursor: pointer;
-  user-select: none;
-}
+    .content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
 
-.role-option input[type="radio"] {
-  margin-right: 8px;
-  cursor: pointer;
-}
+    .content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
 
-/* Form labels */
-label {
-  display: block;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 8px;
-  text-align: left;
-  font-size: 15px;
-}
+    .btn {
+      padding: 14px 28px;
+      font-size: 1rem;
+      margin: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+      min-width: 200px;
+    }
 
-/* Inputs styling */
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 12px 15px;
-  font-size: 15px;
-  border: 1.8px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
-}
+    .provider-btn {
+      background-color: #007bff;
+      color: white;
+    }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-  border-color: #5a9bf6;
-  outline: none;
-}
+    .provider-btn:hover {
+      background-color: #0056b3;
+    }
 
-/* Submit button */
-button[type="submit"] {
-  width: 100%;
-  padding: 14px 0;
-  background-color: #5a9bf6;
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-}
+    .consumer-btn {
+      background-color: #28a745;
+      color: white;
+    }
 
-button[type="submit"]:hover {
-  background-color: #3a7be0;
-}
-
-/* Sign-in text */
-.signin-text {
-  margin-top: 22px;
-  font-size: 14px;
-  color: #555;
-}
-
-.signin-text a {
-  color: #5a9bf6;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.signin-text a:hover {
-  text-decoration: underline;
-}
-
-/* Success Popup */
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #e6ffed;
-  border: 2px solid #3cba54;
-  border-radius: 14px;
-  padding: 30px 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  text-align: center;
-  z-index: 1000;
-  min-width: 320px;
-}
-
-.popup.hidden {
-  display: none;
-}
-
-.popup-content .tick {
-  font-size: 48px;
-  color: #3cba54;
-  margin-bottom: 15px;
-}
-
-#successMessage {
-  font-size: 18px;
-  color: #2d7c3e;
-  font-weight: 600;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-  .signup-box {
-    padding: 30px 25px;
+    .consumer-btn:hover {
+      background-color: #1c7430;
+    }
+    /* signup */
+  #message {
+    display: none;
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
   }
-
-  .role-selection {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
-
-
 /* Signin Page Container */
 .signin-container {
   min-height: 100vh;
@@ -530,16 +488,6 @@ button[type="submit"]:hover {
   text-decoration: underline;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-  .signin-box {
-    padding: 30px 25px;
-  }
-
-  .signin-box h2 {
-    font-size: 24px;
-  }
-}
 
 /* Container Wrapper for Contact and Appointment Sections */
 .container-wrapper {
@@ -575,7 +523,7 @@ button[type="submit"]:hover {
 form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 15px;
 }
 
 label {
@@ -589,12 +537,14 @@ input[type="tel"],
 input[type="email"],
 input[type="date"],
 textarea {
-  padding: 12px 15px;
-  font-size: 15px;
-  border: 1.8px solid #ccc;
+ width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ccc;
   border-radius: 8px;
+  font-size: 16px;
   resize: vertical;
-  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  flex-grow: 1;
 }
 
 input[type="text"]:focus,
@@ -607,8 +557,8 @@ textarea:focus {
 }
 
 textarea {
-  min-height: 100px;
-  font-family: inherit;
+   min-height: 100px;
+  max-height: 200px;
 }
 
 /* Submit Buttons */
@@ -659,32 +609,22 @@ button[type="submit"]:hover {
   color: #2d7c3e;
   font-weight: 600;
 }
-
-/* Responsive: Stack on smaller screens */
-@media (max-width: 768px) {
-  .container-wrapper {
-    flex-direction: column;
-    padding: 30px 15px;
-  }
-
-  .contact {
-    width: 100%;
-    min-width: auto;
-    margin-bottom: 40px;
-  }
-
-  .contact:last-child {
-    margin-bottom: 0;
-  }
-
-  .contact h2 {
-    font-size: 28px;
-  }
-
-  button[type="submit"] {
-    font-size: 16px;
-  }
+.successPopup {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #dff0d8;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
+
+.successPopup.hidden {
+  display: none;
+}
+
 
 
 /* ============================
@@ -760,17 +700,7 @@ button[type="submit"]:hover {
   line-height: 1.5;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .testimonials-list {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .testimonial-member {
-    width: 90%;
-  }
-}
 
 /* =====================
    Footer
@@ -815,3 +745,226 @@ footer {
     opacity: 1;
   }
 }
+   main.container {
+      padding: 30px 15px;
+      max-width: 1100px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #147dad;
+      font-weight: 600;
+    }
+    .providers-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+    .provider-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      width: 280px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .provider-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 12px;
+    }
+    .provider-name {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #003366;
+    }
+    .provider-expertise {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 12px;
+      min-height: 42px;
+    }
+    .contact-btn {
+      padding: 10px 18px;
+      border: none;
+      background-color: #28a745;
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .contact-btn:hover {
+      background-color: #1c7430;
+    }
+
+    /* Contact info popup */
+    .contact-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #e6f7ff;
+      border: 2px solid #3399ff;
+      border-radius: 14px;
+      padding: 30px 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      z-index: 1001;
+      min-width: 320px;
+      display: none;
+    }
+    .contact-popup.visible {
+      display: block;
+    }
+    .contact-popup h3 {
+      margin-bottom: 12px;
+      color: #0077cc;
+    }
+    .contact-popup p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #004466;
+    }
+    .contact-popup button.close-btn {
+      padding: 8px 18px;
+      background-color: #0077cc;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .contact-popup button.close-btn:hover {
+      background-color: #005a99;
+    }
+   /* Responsive adjustments */
+  @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 10px;
+        width: 100%;
+      }
+
+      .video-bg {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .overlay {
+        height: 100vh;
+      }
+
+      .content {
+        padding: 1rem;
+        text-align: center;
+        top: 30%;
+      }
+
+      .logo-title {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .logo-title h1 {
+        font-size: 1.5rem;
+      }
+
+      .menu-toggle {
+        display: block;
+        background-color: transparent;
+        border: none;
+        font-size: 1.8rem;
+        color: #fff;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1100;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content h2 {
+        font-size: 1.5rem;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content li {
+      padding: 8px 12px;
+    }
+
+    .dropdown-content li a {
+      color: black;
+      text-decoration: none;
+    }
